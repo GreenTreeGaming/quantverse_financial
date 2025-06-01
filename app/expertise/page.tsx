@@ -107,7 +107,7 @@ const ExpertisePage = () => {
               Want to work with us?
             </h2>
             <p className="text-gray-400 mb-6">
-              Let's bring data, engineering, and insight into your next move.
+              Let&apos;s bring data, engineering, and insight into your next move.
             </p>
             <button className="bg-[#6DFF9E] text-black font-semibold px-8 py-3 rounded-xl shadow-lg hover:scale-105 transition hover:shadow-[0_0_30px_#6DFF9E80]">
               Schedule a Consultation

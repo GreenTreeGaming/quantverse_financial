@@ -98,7 +98,7 @@ const ServicesPage = () => {
             Real Impact. Real Results.
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto mb-12">
-            From enterprise clients to fast-moving startups, we've deployed
+            From enterprise clients to fast-moving startups, we&apos;ve deployed
             solutions that scale, accelerate, and transform.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -138,11 +138,11 @@ const ServicesPage = () => {
         {/* CTA */}
         <section className="py-24 px-6 text-center bg-[#0a0a0a] border-t border-white/10">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#6DFF9E] mb-6">
-            Let’s Build Your Vision
+            Let&apos;s Build Your Vision
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto mb-8">
-            Whether it's AI, automation, or a full-stack transformation —
-            we’re ready to collaborate and innovate with you.
+            Whether it&apos;s AI, automation, or a full-stack transformation —
+            we&apos;re ready to collaborate and innovate with you.
           </p>
           <button className="bg-[#6DFF9E] text-black font-semibold px-8 py-4 rounded-2xl shadow-lg hover:scale-105 transition hover:shadow-[0_0_30px_#6DFF9E80]">
             Start a Project
