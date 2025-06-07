@@ -4,31 +4,32 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 const services = [
   {
-    title: "AI Strategy",
-    desc: "Develop tailored machine learning solutions that align with your goals.",
+    title: "Social Media Marketing",
+    desc: "Boost engagement and brand loyalty with strategic, data-driven content and growth campaigns.",
   },
   {
-    title: "Data Engineering",
-    desc: "Design scalable pipelines, data lakes, and analytics environments.",
+    title: "Website Development",
+    desc: "Build high-performance, SEO-friendly websites that convert visitors into clients across all devices.",
   },
   {
-    title: "Quantitative Modeling",
-    desc: "Use advanced modeling and forecasting to drive decision intelligence.",
+    title: "Paid Advertisements",
+    desc: "Drive leads and maximize ROI with expertly managed ad campaigns across search and social platforms.",
   },
   {
-    title: "Cloud Architecture",
-    desc: "Deploy secure, efficient, and flexible cloud-native solutions.",
+    title: "Google Ads",
+    desc: "Optimize your ad spend with targeted, keyword-focused strategies that deliver measurable results.",
   },
   {
-    title: "Automation Systems",
-    desc: "Build AI-powered automation for operations, finance, and customer success.",
+    title: "Facebook Ads",
+    desc: "Reach your ideal audience with compelling creatives and algorithm-aware targeting strategies.",
   },
   {
-    title: "Web3 / Blockchain",
-    desc: "Integrate smart contracts and decentralized systems into your stack.",
+    title: "Search Engine Optimization (SEO)",
+    desc: "Improve visibility and rank higher on search engines with technical SEO and high-impact content.",
   },
 ];
 
@@ -51,7 +52,7 @@ const ServicesPage = () => {
         {/* Matrix Background */}
         <div
           aria-hidden="true"
-          className="fixed inset-0 -z-10 pointer-events-none animate-[floatBg_50s_linear_infinite]"
+          className="fixed inset-0 -z-20 pointer-events-none animate-[floatBg_50s_linear_infinite]"
           style={{
             backgroundImage:
               "radial-gradient(circle at 1px 1px, rgba(109,255,158,0.15) 2.5px, transparent 0)",
@@ -144,9 +145,11 @@ const ServicesPage = () => {
             Whether it&apos;s AI, automation, or a full-stack transformation —
             we&apos;re ready to collaborate and innovate with you.
           </p>
-          <button className="bg-[#6DFF9E] text-black font-semibold px-8 py-4 rounded-2xl shadow-lg hover:scale-105 transition hover:shadow-[0_0_30px_#6DFF9E80]">
-            Start a Project
-          </button>
+          <Link href="/contact">
+            <button className="bg-[#6DFF9E] text-black font-semibold px-8 py-4 rounded-2xl shadow-lg hover:scale-105 transition hover:shadow-[0_0_30px_#6DFF9E80]">
+              Start a Project
+            </button>
+          </Link>
         </section>
 
         {/* Keyframes */}
