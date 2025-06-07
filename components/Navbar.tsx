@@ -32,7 +32,7 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8 text-sm text-white">
-          {links.map(({ label, href }, index) => (
+          {links.map(({ label, href }, _) => (
             <motion.a
               key={label}
               href={href}

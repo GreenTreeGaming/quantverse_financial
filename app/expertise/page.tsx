@@ -101,10 +101,10 @@ const ExpertisePage = () => {
           className="py-24 px-6 text-center bg-[#0d0d0d]"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-[#6DFF9E] mb-6">
-            Let's Build the Future Together
+            Let&#39;s Build the Future Together
           </h2>
           <p className="text-gray-400 max-w-xl mx-auto mb-8">
-            Whether it’s a custom LLM pipeline or full-scale digital transformation—Quantverse is your technical partner.
+            Whether it&#39;s a custom LLM pipeline or full-scale digital transformation—Quantverse is your technical partner.
           </p>
           <Link href="/contact">
             <button className="bg-[#6DFF9E] text-black font-semibold px-8 py-4 rounded-xl shadow-lg hover:scale-105 transition hover:shadow-[0_0_30px_#6DFF9E80]">
