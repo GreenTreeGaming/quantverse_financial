@@ -90,7 +90,7 @@ const ContactPage = () => {
                 } else {
                   setResult(data.message || "Something went wrong. Please try again.");
                 }
-              } catch (_) {
+              } catch {
                 setResult("Network error. Please try again.");
               } finally {
                 setIsSubmitting(false);
