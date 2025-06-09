@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
@@ -9,6 +9,17 @@ import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 const ContactPage = () => {
   const [result, setResult] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Load Calendly script once on mount
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   return (
     <>
@@ -58,7 +69,6 @@ const ContactPage = () => {
               setResult("Sending...");
 
               const form = e.target as HTMLFormElement;
-
               const formData = new FormData(form);
               const name = formData.get("name") as string;
               const email = formData.get("email") as string;
@@ -187,9 +197,17 @@ const ContactPage = () => {
           </motion.div>
         </section>
 
+        {/* Calendly Inline Widget */}
+        <div className="w-full px-6 pb-24">
+          <div
+            className="calendly-inline-widget w-full"
+            data-url="https://calendly.com/quantverseconsulting/30min"
+            style={{ minWidth: "320px", height: "700px" }}
+          ></div>
+        </div>
+
         <Footer />
 
-        {/* Keyframes */}
         <style jsx>{`
           @keyframes floatBg {
             0% {

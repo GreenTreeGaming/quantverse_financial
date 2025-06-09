@@ -4,31 +4,36 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-const team = [
+const founders = [
   {
-    name: "Avery Chen",
-    role: "Founder & Principal Architect",
-    bio: "Ex-Meta, systems thinker, AI infra specialist with a decade of experience scaling cloud-native architectures.",
-    initials: "AC",
+    name: "Kavin Gunaseelan",
+    school: "St. Thomas Class of 2027",
+    majors: "Entrepreneurship & Financial Management",
+    minor: "Business Analytics",
+    bio: `Kavin is the Co-Founder of QuantVerse Consulting Group, where he leads strategic efforts focused on helping small and mid-sized businesses grow through data-backed marketing, operational optimization, and customer acquisition efficiency.
+
+With deep experience working across industries like education, health and wellness, and hospitality, Kavin has consulted with businesses to solve real-world challenges—ranging from decreasing customer churn to improving digital engagement and increasing ROI on ad spend.
+
+In one consulting engagement, he conducted a full customer journey analysis to identify where leads were dropping off in the sales funnel. By developing a refined targeting strategy and automating follow-up communications, the business saw a 27% improvement in conversion within three months.
+
+Kavin’s strengths lie in financial modeling, strategic planning, and digital marketing analytics. He blends creativity with precision, leveraging tools like Google Analytics, CRM systems, and targeted advertising platforms to deliver measurable improvements.`,
+    img: "/kavinp.jpeg",
   },
   {
-    name: "Jordan Vega",
-    role: "Lead Data Scientist",
-    bio: "Focused on NLP, LLM pipelines, and deploying models into real-world ops. Ex-Stripe, MS in Stats.",
-    initials: "JV",
-  },
-  {
-    name: "Nia Thompson",
-    role: "Full Stack Engineer",
-    bio: "Builder at heart. From API design to pixel-perfect UI, she's shipped platforms across fintech & healthtech.",
-    initials: "NT",
-  },
-  {
-    name: "Kai Rami",
-    role: "Product Strategist",
-    bio: "Turns ambiguity into action. Kai bridges product, users, and engineering with razor-sharp clarity.",
-    initials: "KR",
+    name: "Ansh Khosa",
+    school: "University of Michigan Class of 2029",
+    majors: "Data Science & Mathematics of Finance and Risk Management",
+    minor: "",
+    bio: `Ansh is the Co-Founder of QuantVerse Consulting Group and a highly skilled analyst with a strong foundation in quantitative finance, statistical modeling, and data science.
+
+In one case, Ansh developed a dynamic pricing model that helped a client identify the most profitable price points across seasonal demand shifts, improving revenue stability without sacrificing competitiveness.
+
+He implemented a multivariable regression analysis on customer data to uncover key retention drivers, allowing the business to prioritize high-impact service features.
+
+Ansh’s core strengths include financial analytics, data visualization, risk modeling, and Python-based analysis. His ability to simplify complex data and extract key insights makes him an invaluable asset for clients seeking both clarity and strategic direction in a numbers-driven world.`,
+    img: "/anshp.png",
   },
 ];
 
@@ -55,37 +60,61 @@ const OurTeamPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#6DFF9E] mb-4">
-              Meet Our Team
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#6DFF9E] mb-4 drop-shadow-[0_0_10px_#6DFF9E99]">
+              Meet Our Founders
             </h1>
             <p className="text-gray-400 max-w-xl mx-auto text-base sm:text-lg">
-              Visionaries. Engineers. Problem-solvers. This is the crew behind Quantverse.
+              Strategic, data-driven, and future-focused. Get to know the leaders behind QuantVerse.
             </p>
           </motion.div>
         </section>
 
-        {/* Team Grid */}
-        <section className="py-24 px-6 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {team.map((member, i) => (
+        {/* Founders */}
+        <section className="py-20 space-y-28">
+          {founders.map((person, i) => (
             <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 30 }}
+              key={person.name}
+              className={`max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-12 px-6 ${
+                i % 2 !== 0 ? "lg:flex-row-reverse" : ""
+              }`}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
               viewport={{ once: true }}
-              className="relative group bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-md transition hover:shadow-[0_0_30px_#6DFF9E50]"
+              transition={{ duration: 0.7, delay: i * 0.2 }}
             >
-              {/* Avatar */}
-              <div className="w-14 h-14 rounded-full bg-[#6DFF9E20] border border-[#6DFF9E40] text-[#6DFF9E] font-bold flex items-center justify-center text-xl mb-4">
-                {member.initials}
-              </div>
-              {/* Name & Role */}
-              <h3 className="text-lg font-semibold text-white mb-1">{member.name}</h3>
-              <p className="text-sm text-[#6DFF9E] mb-2">{member.role}</p>
-              {/* Bio (Reveal on Hover for desktop) */}
-              <p className="text-sm text-gray-400 group-hover:text-gray-300 transition line-clamp-3">
-                {member.bio}
-              </p>
+              {/* Text Content */}
+              <motion.div
+                className="space-y-4 w-full"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#6DFF9E] drop-shadow-[0_0_10px_#6DFF9E40]">
+                  {person.name}
+                </h2>
+                <p className="text-sm text-gray-400 italic">
+                  {person.school}
+                  {person.minor && ` | Minor: ${person.minor}`}
+                </p>
+                <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line">
+                  {person.bio}
+                </p>
+              </motion.div>
+
+              {/* Image with effects */}
+              <motion.div
+                className="relative group w-full max-w-[320px] rounded-2xl overflow-hidden border border-[#6DFF9E30] shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 200, damping: 20 }}
+              >
+                <Image
+                  src={person.img}
+                  alt={person.name}
+                  width={400}
+                  height={400}
+                  className="w-full h-auto object-cover rounded-2xl"
+                />
+              </motion.div>
             </motion.div>
           ))}
         </section>
@@ -98,7 +127,7 @@ const OurTeamPage = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#6DFF9E] mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[#6DFF9E] mb-4 drop-shadow-[0_0_10px_#6DFF9E99]">
               Want to Collaborate With Us?
             </h2>
             <p className="text-gray-400 max-w-xl mx-auto mb-6">

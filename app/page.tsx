@@ -85,16 +85,24 @@ export default function Home() {
             />
           </div>
 
-          {/* Title & Description */}
           <motion.h1
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 1 }}
             className="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#6DFF9E] via-white to-[#00FFC6] drop-shadow-[0_0_20px_#6DFF9E80]"
           >
-            QUANTVERSE <br className="block sm:hidden" />
-            <span className="text-white/60">CONSULTING GROUP</span>
+            Smarter Consulting. <br className="block sm:hidden" />
+            Real Results.
           </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="text-base sm:text-lg md:text-xl text-gray-300 mt-6 max-w-xl"
+          >
+            We help businesses grow through strategic consulting, performance marketing, and modern tech—tailored to real-world goals.
+          </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}

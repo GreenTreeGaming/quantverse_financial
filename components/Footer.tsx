@@ -1,6 +1,15 @@
-"use client"
+"use client";
 
 import React from "react";
+
+const links = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Expertise", href: "/expertise" },
+  { label: "Our Clients", href: "/clients" },
+  { label: "Our Team", href: "/team" },
+  { label: "Contact", href: "/contact" },
+];
 
 const Footer = () => {
   return (
@@ -16,13 +25,13 @@ const Footer = () => {
 
         {/* Middle: Links */}
         <div className="flex flex-wrap justify-center gap-4 text-gray-400">
-          {["Home", "Services", "Expertise", "Contact"].map((link) => (
+          {links.map(({ label, href }) => (
             <a
-              key={link}
-              href={`#${link.toLowerCase()}`}
+              key={label}
+              href={href}
               className="hover:text-[#6DFF9E] transition"
             >
-              {link}
+              {label}
             </a>
           ))}
         </div>

@@ -4,25 +4,29 @@ import React from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const clients = [
   {
-    name: "Finexus Capital",
-    industry: "Finance & Investments",
+    name: "Oakwood Barbers",
+    industry: "Local Business / Grooming",
     summary:
-      "Built a GPT-powered insights engine automating reporting + client comms.",
-    result: "70% reduction in reporting time, 2x engagement boost.",
-    tech: ["Next.js", "LangChain", "Pinecone", "Stripe"],
+      "Developed a modern website and social media presence to boost visibility and client engagement.",
+    result: "Increased booking conversions by 31% and social reach by 3x.",
+    tech: ["React", "Tailwind CSS", "Vercel", "Instagram API"],
+    logo: "/oakwoodimage.webp",
   },
   {
-    name: "NeoMart Retail",
-    industry: "E-commerce & Retail",
+    name: "Level Up Soccer Coaching",
+    industry: "Athletics / Coaching",
     summary:
-      "Deployed a dynamic pricing model with real-time forecasting + alerting.",
-    result: "14% increase in AOV, 22% savings in logistics.",
-    tech: ["Python", "FastAPI", "Redis", "PostgreSQL"],
+      "Launched and optimized personalized Google + Facebook Ads with real-time lead analytics dashboard.",
+    result: "4x ROI on ad spend and 40% increase in sign-ups in 8 weeks.",
+    tech: ["Google Ads", "Meta Ads", "Looker Studio", "Zapier"],
+    logo: "/levelup2.png",
   },
 ];
+
 
 const OurClientsPage = () => {
   return (
@@ -86,15 +90,21 @@ const OurClientsPage = () => {
                 </div>
               </div>
 
-              {/* Visual Placeholder or Image */}
-              <div className="relative h-56 md:h-64 w-full rounded-2xl overflow-hidden border border-white/10 bg-gradient-to-br from-[#6DFF9E1A] to-transparent flex items-center justify-center">
-                <motion.div
-                  className="w-20 h-20 rounded-full border-4 border-[#6DFF9E] animate-pulse"
-                  initial={{ scale: 0.8 }}
-                  whileInView={{ scale: 1 }}
-                  transition={{ duration: 0.6 }}
+              {/* Client Image */}
+              <motion.div
+                className="relative w-full max-w-md mx-auto rounded-2xl overflow-hidden border border-white/10 bg-black shadow-lg"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+              >
+                <Image
+                  src={client.logo}
+                  alt={`${client.name} project image`}
+                  width={640}
+                  height={360}
+                  className="w-full h-auto object-cover"
                 />
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </section>
