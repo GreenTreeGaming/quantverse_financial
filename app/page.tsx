@@ -91,8 +91,8 @@ export default function Home() {
             transition={{ delay: 0.2, duration: 1 }}
             className="text-4xl sm:text-6xl md:text-7xl font-extrabold leading-tight bg-clip-text text-transparent bg-gradient-to-r from-[#6DFF9E] via-white to-[#00FFC6] drop-shadow-[0_0_20px_#6DFF9E80]"
           >
-            Smarter Consulting. <br className="block sm:hidden" />
-            Real Results.
+            QUANTVERSE <br className="block sm:hidden" />
+            CONSULTING GROUP
           </motion.h1>
 
           <motion.p
