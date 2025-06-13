@@ -94,6 +94,7 @@ const OurTeamPage = () => {
                 </h2>
                 <p className="text-sm text-gray-400 italic">
                   {person.school}
+                  {person.majors && ` | Majors: ${person.majors}`}
                   {person.minor && ` | Minor: ${person.minor}`}
                 </p>
                 <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line">
